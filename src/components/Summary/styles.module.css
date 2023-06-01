@@ -1,0 +1,25 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 4rem;
+}
+
+.heading > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.heading > div:nth-child(1) > strong {
+  color: var(--blue-500);
+}
+
+.heading > div:nth-child(2) > strong {
+  color: var(--blue-secondary);
+}
+
+.amount {
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: var(--gray-700);
+}

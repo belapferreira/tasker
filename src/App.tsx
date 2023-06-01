@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Summary } from "./components/Summary";
 import { EmptyState } from "./components/EmptyState";
 
 import styles from "./App.module.css";
@@ -12,6 +13,7 @@ function App() {
 
       <main className={styles.main}>
         <div className={styles.content}>
+          <Summary />
           <EmptyState />
         </div>
       </main>
