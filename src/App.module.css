@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  background: var(--gray-800);
+  min-height: calc(100vh - 12.5rem);
+}
+
+.content {
+  width: 100%;
+  max-width: 46rem;
+}
