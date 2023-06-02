@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--gray-700);
+  border: 1px solid var(--gray-600);
+}
+
+.container p {
+  color: var(--gray-100);
+}
+
+.container:has(.checkbox[data-state="checked"]) {
+  opacity: 0.5;
+}
+
+.container:has(.checkbox[data-state="checked"]) p {
+  text-decoration: line-through;
+}
+
+.deleteButton {
+  all: unset;
+  padding: 0.5rem;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.deleteButton:hover {
+  cursor: pointer;
+  background: var(--gray-600);
+}
+
+.deleteButton > svg {
+  color: var(--gray-400);
+}
+
+.checkbox {
+  all: unset;
+  line-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 0.75rem;
+  max-width: 0.75rem;
+  border-radius: 50%;
+
+  border: 2px solid var(--blue-500);
+}
+
+.checkbox svg {
+  color: var(--white);
+}
+
+.checkbox[data-state="checked"] {
+  background: var(--blue-secondary);
+  border-color: var(--blue-secondary);
+}
+
+.checkbox[data-state="checked"] svg {
+  color: var(--gray-800);
+}

@@ -11,3 +11,9 @@
   width: 100%;
   max-width: 46rem;
 }
+
+.tasks {
+  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
