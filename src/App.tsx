@@ -1,4 +1,6 @@
 import { Task } from "./components/Task";
+import { Input } from "./components/Input";
+import { Button } from "./components/Button";
 import { Header } from "./components/Header";
 import { Summary } from "./components/Summary";
 // import { EmptyState } from "./components/EmptyState";
@@ -14,6 +16,12 @@ function App() {
 
       <main className={styles.main}>
         <div className={styles.content}>
+          <div className={styles.newTask}>
+            <Input />
+
+            <Button />
+          </div>
+
           <Summary />
 
           <div className={styles.tasks}>
