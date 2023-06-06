@@ -4,7 +4,11 @@ import { BiCheck } from "react-icons/bi";
 
 import styles from "./styles.module.css";
 
-export const Task = () => {
+interface TaskProps {
+  description: string;
+}
+
+export const Task = ({ description }: TaskProps) => {
   return (
     <div className={styles.container}>
       <Checkbox.Root className={styles.checkbox}>
@@ -13,10 +17,7 @@ export const Task = () => {
         </Checkbox.Indicator>
       </Checkbox.Root>
 
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, quo
-        commodi id eveniet culpa voluptatibus.
-      </p>
+      <p>{description}</p>
 
       <button className={styles.deleteButton}>
         <IoTrashOutline />

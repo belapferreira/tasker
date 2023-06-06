@@ -1,20 +1,27 @@
 import styles from "./styles.module.css";
 
-export const Summary = () => {
+interface SummaryProps {
+  total: number;
+  completedAmount: number;
+}
+
+export const Summary = ({ total, completedAmount }: SummaryProps) => {
   return (
     <div className={styles.heading}>
       <div>
-        <strong>Tarefas criadas</strong>
+        <strong>Created tasks</strong>
 
         <div className={styles.amount}>
-          <strong>5</strong>
+          <strong>{total}</strong>
         </div>
       </div>
       <div>
-        <strong>Concluídas</strong>
+        <strong>Done</strong>
 
         <div className={styles.amount}>
-          <strong>2 de 5</strong>
+          <strong>
+            {completedAmount} de {total}
+          </strong>
         </div>
       </div>
     </div>

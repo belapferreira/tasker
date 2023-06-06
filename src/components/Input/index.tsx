@@ -1,7 +1,22 @@
+import { InputHTMLAttributes } from "react";
+
 import styles from "./styles.module.css";
 
-export const Input = () => {
+export const Input = ({
+  value,
+  required,
+  onChange,
+  onInvalid,
+  placeholder,
+}: InputHTMLAttributes<HTMLInputElement>) => {
   return (
-    <input placeholder="Adicione uma nova tarefa" className={styles.input} />
+    <input
+      placeholder={placeholder}
+      className={styles.input}
+      onInvalid={onInvalid}
+      required={required}
+      onChange={onChange}
+      value={value}
+    />
   );
 };

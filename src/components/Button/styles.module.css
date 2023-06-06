@@ -8,12 +8,16 @@
   gap: 0.5rem;
   height: 3rem;
   padding: 0 1rem;
-  cursor: pointer;
   border-radius: 8px;
   color: var(--white);
   background: var(--blue-500);
 }
 
-.button:hover {
+.button:hover:not([disabled]) {
+  cursor: pointer;
   background: var(--blue-600);
+}
+
+.button:disabled {
+  opacity: 0.7;
 }
