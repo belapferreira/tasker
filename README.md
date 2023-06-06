@@ -13,5 +13,5 @@ Tasker is a application to create and follow tasks that you would like to do and
 </br>
 
 <p align="center">
-  <img src="src/assets/tasker-screenshot.png" width="70%" max-width="100%" />
+  <img src="src/assets/tasker-image.png" width="70%" max-width="100%" />
 </p>
