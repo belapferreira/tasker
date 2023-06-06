@@ -31,7 +31,7 @@
   align-self: center;
 }
 
-.deleteButton:hover {
+.deleteButton:hover:not([disabled]) {
   cursor: pointer;
   background: var(--gray-600);
 }

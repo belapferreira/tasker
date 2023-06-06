@@ -6,12 +6,20 @@ import styles from "./styles.module.css";
 
 interface TaskProps {
   description: string;
+  isCompleted: boolean;
+  onDelete: () => void;
+  onToogleStatus: () => void;
 }
 
-export const Task = ({ description }: TaskProps) => {
+export const Task = ({
+  description,
+  isCompleted,
+  onDelete,
+  onToogleStatus,
+}: TaskProps) => {
   return (
     <div className={styles.container}>
-      <Checkbox.Root className={styles.checkbox}>
+      <Checkbox.Root className={styles.checkbox} onClick={onToogleStatus}>
         <Checkbox.Indicator>
           <BiCheck size={12} />
         </Checkbox.Indicator>
@@ -19,7 +27,11 @@ export const Task = ({ description }: TaskProps) => {
 
       <p>{description}</p>
 
-      <button className={styles.deleteButton}>
+      <button
+        className={styles.deleteButton}
+        onClick={onDelete}
+        disabled={isCompleted}
+      >
         <IoTrashOutline />
       </button>
     </div>

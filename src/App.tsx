@@ -51,6 +51,26 @@ function App() {
     setNewTask("");
   };
 
+  const handleDeleteTask = (id: string) => {
+    const tasksToKeep = tasks?.filter((task) => task?.id !== id);
+
+    setTasks(tasksToKeep);
+  };
+
+  const handleToggleTaskStatus = (id: string) => {
+    const taskToUpdate = tasks?.find((task) => task?.id === id);
+    const tasksToMaintain = tasks?.filter((task) => task?.id !== id);
+
+    const taskUpdated = {
+      ...taskToUpdate,
+      isCompleted: !taskToUpdate?.isCompleted,
+    } as Task;
+
+    const tasksUpdated = [...tasksToMaintain, taskUpdated];
+
+    setTasks(tasksUpdated);
+  };
+
   return (
     <div>
       <Header />
@@ -75,8 +95,14 @@ function App() {
             <EmptyState />
           ) : (
             <div className={styles.tasks}>
-              {tasks?.map(({ id, description }) => (
-                <Task key={id} description={description} />
+              {tasks?.map(({ id, description, isCompleted }) => (
+                <Task
+                  key={id}
+                  isCompleted={isCompleted}
+                  description={description}
+                  onDelete={() => handleDeleteTask(id)}
+                  onToogleStatus={() => handleToggleTaskStatus(id)}
+                />
               ))}
             </div>
           )}
