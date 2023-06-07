@@ -7,9 +7,9 @@ export const EmptyState = () => {
     <div className={styles.container}>
       <img src={clipboardIcon} />
 
-      <strong>Você ainda não tem tarefas cadastradas</strong>
+      <strong>You don't have any task registered</strong>
 
-      <span>Crie tarefas e organize seus itens a fazer</span>
+      <span>Create tasks and organize o what you have to do</span>
     </div>
   );
 };

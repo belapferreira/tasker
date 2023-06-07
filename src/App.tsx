@@ -1,4 +1,10 @@
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  InvalidEvent,
+  useEffect,
+  useState,
+} from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { Task } from "./components/Task";
@@ -14,6 +20,7 @@ import "./global.css";
 
 interface Task {
   id: string;
+  createdAt: Date;
   description: string;
   isCompleted: boolean;
 }
@@ -21,6 +28,15 @@ interface Task {
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState("");
+
+  const tasksOrdered =
+    tasks &&
+    tasks?.sort((a, b) => {
+      return (
+        Number(a?.isCompleted) - Number(b?.isCompleted) ||
+        Number(a?.createdAt) - Number(b?.createdAt)
+      );
+    });
 
   const tasksRegistered = tasks?.length;
 
@@ -45,9 +61,12 @@ function App() {
       id: uuidv4(),
       isCompleted: false,
       description: newTask,
+      createdAt: new Date(),
     };
 
-    setTasks([...tasks, newItem]);
+    const tasksJoined = [...tasks, newItem];
+
+    setTasks(tasksJoined);
     setNewTask("");
   };
 
@@ -70,6 +89,24 @@ function App() {
 
     setTasks(tasksUpdated);
   };
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("@tasker:tasks");
+
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (tasks.length) {
+      localStorage.setItem("@tasker:tasks", JSON.stringify(tasks));
+    }
+
+    if (!tasks.length) {
+      localStorage.setItem("@tasker:tasks", "");
+    }
+  }, [tasks, setTasks]);
 
   return (
     <div>
@@ -95,7 +132,7 @@ function App() {
             <EmptyState />
           ) : (
             <div className={styles.tasks}>
-              {tasks?.map(({ id, description, isCompleted }) => (
+              {tasksOrdered?.map(({ id, description, isCompleted }) => (
                 <Task
                   key={id}
                   isCompleted={isCompleted}
