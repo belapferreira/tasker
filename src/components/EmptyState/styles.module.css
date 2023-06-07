@@ -4,6 +4,7 @@
   flex-direction: column;
 
   width: 100%;
+  text-align: center;
   border-radius: 8px;
   padding: 4rem 1.5rem;
   border-top: 1px solid var(--gray-500);
@@ -15,5 +16,17 @@
 }
 
 .container strong {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 330px) {
+  .container span br {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    font-size: 0.875rem;
+  }
 }

@@ -9,7 +9,9 @@ export const EmptyState = () => {
 
       <strong>You don't have any task registered</strong>
 
-      <span>Create tasks and organize o what you have to do</span>
+      <span>
+        Create tasks and organize o what <br /> you have to do
+      </span>
     </div>
   );
 };
