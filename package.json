@@ -2,7 +2,7 @@
   "name": "tasker",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/belapferreira/tasker/"
+  "homepage": "https://belapferreira.github.io/tasker/"
   "type": "module",
   "scripts": {
     "dev": "vite",
