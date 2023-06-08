@@ -145,6 +145,23 @@ function App() {
           )}
         </div>
       </main>
+
+      <footer className={styles.footer}>
+        <p>
+          This application is using the local storage to store tasks registered.
+        </p>
+
+        <p>
+          Developed by Bela Ferreira 💙 Contact:{" "}
+          <a
+            href="http://https://www.linkedin.com/in/belapferreira"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://www.linkedin.com/in/belapferreira
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
