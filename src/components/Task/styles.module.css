@@ -53,7 +53,7 @@
   max-width: 0.75rem;
   border-radius: 50%;
 
-  border: 2px solid var(--blue-500);
+  border: 2px solid var(--blue-mid);
 }
 
 .checkbox svg {
@@ -61,8 +61,8 @@
 }
 
 .checkbox[data-state="checked"] {
-  background: var(--blue-secondary);
-  border-color: var(--blue-secondary);
+  background: var(--blue-light);
+  border-color: var(--blue-light);
 }
 
 .checkbox[data-state="checked"] svg {

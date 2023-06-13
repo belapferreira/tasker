@@ -11,11 +11,11 @@
 }
 
 .heading > div:nth-child(1) > strong {
-  color: var(--blue-500);
+  color: var(--blue-mid);
 }
 
 .heading > div:nth-child(2) > strong {
-  color: var(--blue-secondary);
+  color: var(--gray-200);
 }
 
 .amount {

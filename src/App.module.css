@@ -42,7 +42,7 @@
 }
 
 .footer a {
-  color: var(--blue-500);
+  color: var(--blue-mid);
 }
 
 @media (max-width: 360px) {

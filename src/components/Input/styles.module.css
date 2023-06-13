@@ -11,5 +11,5 @@
 
 .input:focus,
 .input:focus-within {
-  border-color: var(--blue-500);
+  border-color: var(--blue-mid);
 }
