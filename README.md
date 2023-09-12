@@ -7,7 +7,7 @@
 </p>
 
 <strong align="center">
-  Tasker is a application to create and follow tasks that you would like to do and that will help you to achieve your goals.
+  Tasker is an application to create and follow tasks that you would like to do and that will help you to achieve your goals.
 </strong>
 
 <p align="center">
